@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- OPEN GRAPH PREVIEW -->
+  <meta property="og:title" content="Watch This Video">
+  <meta property="og:description" content="This video is going viral. Watch before it gets deleted.">
+  <meta property="og:image" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
+  <meta property="og:image:secure_url" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
+
+  <!-- GITHUB BARU (ANTI 404 INBOX) -->
+  <meta property="og:url" content="https://asia-teen-viral.github.io/Xnxx-freenopaid/index.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Video Player">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .player {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 12px;
+      background: black;
+    }
+
+    #playBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+
+    #playBtn::before {
+      content: "";
+      position: absolute;
+      left: 32px;
+      top: 22px;
+      width: 0;
+      height: 0;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 26px solid white;
+    }
+
+    #continueBtn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player">
+    <video id="video"
+      poster="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg"
+      preload="metadata">
+      <source src="https://res.cloudinary.com/dtvtvfnq9/video/upload/MOV_17665173842637445_s6aisc.mp4" type="video/mp4">
+    </video>
+
+    <button id="playBtn" aria-label="Play"></button>
+    <button id="continueBtn">Continue Watching</button>
+  </div>
+
+  <script>
+    const video = document.getElementById("video");
+    const playBtn = document.getElementById("playBtn");
+    const continueBtn = document.getElementById("continueBtn");
+
+    const SMARTLINK_1 = "https://www.effectivegatecpm.com/eijqgsvh?key=273d74403da25a3c54d7306883753465";
+    const SMARTLINK_2 = "https://www.effectivegatecpm.com/nz89pigd?key=70bdf1d64d4db7eda17ef27a3d151ffe";
+
+    let continueShown = false;
+
+    playBtn.onclick = () => {
+      window.open(SMARTLINK_1, "_blank");
+      playBtn.style.display = "none";
+      video.play();
+    };
+
+    video.addEventListener("timeupdate", () => {
+      if (video.currentTime >= 50 && !continueShown) {
+        video.pause();
+        continueBtn.style.display = "block";
+        continueShown = true;
+      }
+    });
+
+    continueBtn.onclick = () => {
+      window.open(SMARTLINK_2, "_blank");
+      continueBtn.style.display = "none";
+      video.currentTime = 50;
+      video.play();
+    };
+  </script>
+
+  <!-- SOCIAL BAR -->
+  <script src="https://encyclopediaskilled.com/bc/6e/f4/bc6ef44e3e50af4519224a2b3561f52c.js"></script>
+
+</body>
+</html>
