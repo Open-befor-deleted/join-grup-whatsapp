@@ -1,136 +1,130 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Video Player</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- OPEN GRAPH PREVIEW -->
-  <meta property="og:title" content="Watch This Video">
-  <meta property="og:description" content="This video is going viral. Watch before it gets deleted.">
-  <meta property="og:image" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
-  <meta property="og:image:secure_url" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
+<title>Video Eksklusif</title>
 
-  <!-- GITHUB BARU (ANTI 404 INBOX) -->
-  <meta property="og:url" content="https://asia-teen-viral.github.io/Xnxx-freenopaid/index.html">
+<!-- Open Graph Meta -->
+<meta property="og:title" content="Tonton Video Ini Sekarang">
+<meta property="og:description" content="Klik untuk menonton video eksklusif">
+<meta property="og:image" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
+<meta property="og:type" content="video.other">
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Video Player">
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#000;
+    font-family:Arial,sans-serif;
+    text-align:center;
+}
+.container{
+    max-width:640px;
+    margin:auto;
+    position:relative;
+}
+video{
+    width:100%;
+    height:auto;
+    background:#000;
+}
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image">
+/* Play icon tengah */
+.play-icon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.play-icon:before{
+    content:'';
+    margin-left:5px;
+    width:0;
+    height:0;
+    border-top:18px solid transparent;
+    border-bottom:18px solid transparent;
+    border-left:28px solid rgba(255,255,255,0.9);
+}
 
-  <style>
-    body {
-      margin: 0;
-      background: #0f172a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    .player {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-    }
-
-    video {
-      width: 100%;
-      border-radius: 12px;
-      background: black;
-    }
-
-    #playBtn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-    }
-
-    #playBtn::before {
-      content: "";
-      position: absolute;
-      left: 32px;
-      top: 22px;
-      width: 0;
-      height: 0;
-      border-top: 18px solid transparent;
-      border-bottom: 18px solid transparent;
-      border-left: 26px solid white;
-    }
-
-    #continueBtn {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 12px 24px;
-      background: rgba(0,0,0,0.65);
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      display: none;
-    }
-  </style>
+/* Continue button */
+.btn{
+    display:inline-block;
+    margin:12px auto;
+    padding:12px 20px;
+    background:#ff0000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    font-size:16px;
+}
+.hidden{
+    display:none;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="player">
-    <video id="video"
-      poster="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg"
-      preload="metadata">
-      <source src="https://res.cloudinary.com/dtvtvfnq9/video/upload/MOV_17665173842637445_s6aisc.mp4" type="video/mp4">
+<div class="container">
+
+    <video id="video" preload="metadata" controlsList="nodownload">
+        <source src="https://res.cloudinary.com/dtyitjzp3/video/upload/v1767931088/VID-20251224-WA0000_pwtt5z.mp4" type="video/mp4">
     </video>
 
-    <button id="playBtn" aria-label="Play"></button>
-    <button id="continueBtn">Continue Watching</button>
-  </div>
+    <!-- Play icon pertama -->
+    <div id="playBtn" class="play-icon"></div>
 
-  <script>
-    const video = document.getElementById("video");
-    const playBtn = document.getElementById("playBtn");
-    const continueBtn = document.getElementById("continueBtn");
+</div>
 
-    const SMARTLINK_1 = "https://www.effectivegatecpm.com/eijqgsvh?key=273d74403da25a3c54d7306883753465";
-    const SMARTLINK_2 = "https://www.effectivegatecpm.com/nz89pigd?key=70bdf1d64d4db7eda17ef27a3d151ffe";
+<a id="continueBtn" class="btn hidden" href="#">▶ Continue Watching</a>
 
-    let continueShown = false;
+<script>
+const video = document.getElementById('video');
+const playBtn = document.getElementById('playBtn');
+const continueBtn = document.getElementById('continueBtn');
 
-    playBtn.onclick = () => {
-      window.open(SMARTLINK_1, "_blank");
-      playBtn.style.display = "none";
-      video.play();
-    };
+let pausedAt50 = false;
 
-    video.addEventListener("timeupdate", () => {
-      if (video.currentTime >= 50 && !continueShown) {
+// Play pertama → directlink 1
+playBtn.addEventListener('click', function(){
+    window.open(
+        'https://www.effectivegatecpm.com/xkbwp3ytmv?key=233075d576ac7e16e40842d003108b00',
+        '_blank'
+    );
+    playBtn.style.display = 'none';
+    video.play();
+});
+
+// Pause otomatis di detik 50
+video.addEventListener('timeupdate', function(){
+    if(video.currentTime >= 50 && !pausedAt50){
+        pausedAt50 = true;
         video.pause();
-        continueBtn.style.display = "block";
-        continueShown = true;
-      }
-    });
+        continueBtn.classList.remove('hidden');
+    }
+});
 
-    continueBtn.onclick = () => {
-      window.open(SMARTLINK_2, "_blank");
-      continueBtn.style.display = "none";
-      video.currentTime = 50;
-      video.play();
-    };
-  </script>
-
-  <!-- SOCIAL BAR -->
-  <script src="https://encyclopediaskilled.com/bc/6e/f4/bc6ef44e3e50af4519224a2b3561f52c.js"></script>
+// Continue watching → directlink 2
+continueBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.open(
+        'https://www.effectivegatecpm.com/b7evt7fyji?key=ea70a5f813bfe8b21fcc3823cd9f2c03',
+        '_blank'
+    );
+    continueBtn.style.display = 'none';
+    video.play();
+});
+</script>
 
 </body>
 </html>
