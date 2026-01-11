@@ -1,130 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Sekarang</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
 
-<title>Video Eksklusif</title>
+    .container {
+      text-align: center;
+      padding: 15px;
+    }
 
-<!-- Open Graph Meta -->
-<meta property="og:title" content="Tonton Video Ini Sekarang">
-<meta property="og:description" content="Klik untuk menonton video eksklusif">
-<meta property="og:image" content="https://res.cloudinary.com/dtyitjzp3/image/upload/v1767890355/IMG_20260108_233516_jrhwda.jpg">
-<meta property="og:type" content="video.other">
+    .icon {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
 
-<style>
-body{
-    margin:0;
-    padding:0;
-    background:#000;
-    font-family:Arial,sans-serif;
-    text-align:center;
-}
-.container{
-    max-width:640px;
-    margin:auto;
-    position:relative;
-}
-video{
-    width:100%;
-    height:auto;
-    background:#000;
-}
+    .btn {
+      display: block;
+      width: 220px;
+      margin: 10px auto;
+      padding: 13px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 30px;
+      color: #fff;
+      transition: transform 0.2s ease;
+    }
 
-/* Play icon tengah */
-.play-icon{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:rgba(0,0,0,0.4);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-}
-.play-icon:before{
-    content:'';
-    margin-left:5px;
-    width:0;
-    height:0;
-    border-top:18px solid transparent;
-    border-bottom:18px solid transparent;
-    border-left:28px solid rgba(255,255,255,0.9);
-}
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
-/* Continue button */
-.btn{
-    display:inline-block;
-    margin:12px auto;
-    padding:12px 20px;
-    background:#ff0000;
-    color:#fff;
-    text-decoration:none;
-    border-radius:5px;
-    font-size:16px;
-}
-.hidden{
-    display:none;
-}
-</style>
+    .wa {
+      background: #25D366;
+      animation: slideRight 1.8s ease-in-out infinite alternate;
+    }
+
+    .michat {
+      background: #ec4899;
+      animation: slideLeft 1.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(0); }
+      to { transform: translateX(15px); }
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-15px); }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="container">
+    <img class="icon" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP6LF8UJbSVeBC3vhaGGlAFSigAxrdUE-WGmePwhmFsmFXJHOOcK9_KO5P6z9cI9CcNfwZO_KcQWkqjEF73H2VYZIPSI7B6vKhBh-IAxulpA-QeQyfBD594iau_26wzY5t8cuaqLuuh5jQ2Hk_BZJQHHYYrdciNgxv-e-HFr1DLgr8SLGJvnM55N2eHyXH/s554/images%20(2).png" alt="WhatsApp Icon">
 
-    <video id="video" preload="metadata" controlsList="nodownload">
-        <source src="https://res.cloudinary.com/dtyitjzp3/video/upload/v1767931088/VID-20251224-WA0000_pwtt5z.mp4" type="video/mp4">
-    </video>
+    <a class="btn wa" href="https://ln.run/klik-here-to-Whatsapp%F0%9F%92%9E">
+      💬 WhatsApp
+    </a>
 
-    <!-- Play icon pertama -->
-    <div id="playBtn" class="play-icon"></div>
-
-</div>
-
-<a id="continueBtn" class="btn hidden" href="#">▶ Continue Watching</a>
-
-<script>
-const video = document.getElementById('video');
-const playBtn = document.getElementById('playBtn');
-const continueBtn = document.getElementById('continueBtn');
-
-let pausedAt50 = false;
-
-// Play pertama → directlink 1
-playBtn.addEventListener('click', function(){
-    window.open(
-        'https://contentblanksupersede.com/f65p8nmr0?key=ffecbbdc44c9b7a61841af9a6a4756da',
-        '_blank'
-    );
-    playBtn.style.display = 'none';
-    video.play();
-});
-
-// Pause otomatis di detik 50
-video.addEventListener('timeupdate', function(){
-    if(video.currentTime >= 50 && !pausedAt50){
-        pausedAt50 = true;
-        video.pause();
-        continueBtn.classList.remove('hidden');
-    }
-});
-
-// Continue watching → directlink 2
-continueBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    window.open(
-        'https://irfan6787766-ui.github.io/ASIAN-TEEN/',
-        '_blank'
-    );
-    continueBtn.style.display = 'none';
-    video.play();
-});
-</script>
+    <a class="btn michat" href="https://ln.run/klik-here-to-Whatsapp%F0%9F%92%9E">
+      💖 Mi Chat
+    </a>
+  </div>
 
 </body>
 </html>
